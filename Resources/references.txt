@@ -1,1 +1,4 @@
 https://arxiv.org/pdf/1909.11573.pdf
+https://github.com/dessa-oss/fake-voice-detection
+https://arxiv.org/pdf/1909.04217v1.pdf
+https://www.kaggle.com/tunguz/1-million-fake-faces
