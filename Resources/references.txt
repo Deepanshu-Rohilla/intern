@@ -2,3 +2,6 @@ https://arxiv.org/pdf/1909.11573.pdf
 https://github.com/dessa-oss/fake-voice-detection
 https://arxiv.org/pdf/1909.04217v1.pdf
 https://www.kaggle.com/tunguz/1-million-fake-faces
+https://arxiv.org/pdf/1406.7377.pdf
+https://theprint.in/hoaxposed/viral-photo-of-sonia-gandhi-with-christian-conversion-book-in-background-is-morphed/669492/
+https://www.researchgate.net/publication/336055871_Deep_Learning_for_Deepfakes_Creation_and_Detection_A_Survey
