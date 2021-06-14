@@ -53,7 +53,7 @@ def plot_faces(faces, n):
 
 
 directory = "musk/"
-faces = load_faces(directory,1)
+faces = load_faces(directory,100)
 print("Loaded: ", faces.shape)
-plot_faces(faces,1)
+plot_faces(faces,5)
 savez_compressed("musk.npz", faces)
