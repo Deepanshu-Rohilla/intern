@@ -1,8 +1,9 @@
 import numpy as np
 import cv2 as cv
 import matplotlib.pyplot as plt
-img1 = cv.imread('musk0.jpg',cv.IMREAD_GRAYSCALE)          # queryImage
-img2 = cv.imread('musk1.jpg',cv.IMREAD_GRAYSCALE) # trainImage
+import sys
+img1 = cv.imread(sys.argv[1],cv.IMREAD_GRAYSCALE)          # queryImage
+img2 = cv.imread(sys.argv[2],cv.IMREAD_GRAYSCALE) # trainImage
 # Initiate SIFT detector
 sift = cv.SIFT_create()
 # find the keypoints and descriptors with SIFT
@@ -24,5 +25,8 @@ draw_params = dict(matchColor = (0,255,0),
                    singlePointColor = (255,0,0),
                    matchesMask = matchesMask,
                    flags = cv.DrawMatchesFlags_DEFAULT)
+print(len(matches))
 img3 = cv.drawMatchesKnn(img1,kp1,img2,kp2,matches,None,**draw_params)
 plt.imshow(img3,),plt.show()
+
+# need to make some mathematical model

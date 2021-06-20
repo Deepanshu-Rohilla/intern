@@ -33,7 +33,9 @@ def load_faces(directory, n):
     for filename in listdir(directory):
         if(filename==".DS_Store"):
             continue
-        pixels = load_image(directory + filename)
+        print("filename is ")
+        print(filename)
+        pixels = load_image("donald trump speech101.jpg")
         face = extract_face(model, pixels)
         if(face is None):
             continue
@@ -53,7 +55,7 @@ def plot_faces(faces, n):
 
 
 directory = "musk/"
-faces = load_faces(directory,100)
+faces = load_faces(directory,1)
 print("Loaded: ", faces.shape)
-plot_faces(faces,5)
+plot_faces(faces,1)
 savez_compressed("musk.npz", faces)
