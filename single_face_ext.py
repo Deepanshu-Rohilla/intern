@@ -45,7 +45,7 @@ def plot_face(face):
     pyplot.show()
 
 
-filename = "musk/musk0.jpg"
+filename = "i1.jpeg"
 face = load_face(filename)
 print(type(face))
 print("Loaded: ")

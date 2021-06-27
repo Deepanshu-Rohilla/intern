@@ -19,6 +19,7 @@ for m,n in matches:
         good.append([m])
 # cv.drawMatchesKnn expects list of lists as matches.
 print(len(good))
+print(len(matches))
 img3 = cv.drawMatchesKnn(img1,kp1,img2,kp2,good,None,flags=cv.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
 plt.imshow(img3),plt.show()
 

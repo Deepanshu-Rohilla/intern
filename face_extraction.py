@@ -35,7 +35,7 @@ def load_faces(directory, n):
             continue
         print("filename is ")
         print(filename)
-        pixels = load_image("donald trump speech101.jpg")
+        pixels = load_image("i2.jpeg")
         face = extract_face(model, pixels)
         if(face is None):
             continue
