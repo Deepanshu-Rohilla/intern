@@ -26,7 +26,7 @@ def m1(img1, img2, show):
         plt.imshow(img3),plt.show()
     return len(matches)
 
-def m2(img1, img2, show,i):
+def m2(img1, img2, show):
     sift = cv.SIFT_create()
     # find the keypoints and descriptors with SIFT
     try:    
@@ -46,7 +46,7 @@ def m2(img1, img2, show,i):
     print(len(good))
     if(show):
         img3 = cv.drawMatchesKnn(img1,kp1,img2,kp2,good,None,flags=cv.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
-        plt.imshow(img3),plt.savefig('lol' + str(i))
+        plt.imshow(img3),plt.show()
     return len(good)
 
 def m3(img1, img2, show):
@@ -82,86 +82,86 @@ def m3(img1, img2, show):
         plt.imshow(img3,),plt.show()
     return good + len(matches)
 
-# def method(img_path1, dir1,dir2,methodNum):
-#     goodArray1 = []
-#     goodArrayName1 = []
-#     goodArray2 = []
-#     goodArrayName2 = []
-#     img1 = cv.imread(img_path1,cv.IMREAD_GRAYSCALE) # queryImage
-#     for i in range(101,151):
-#         img_path2 = dir1 + '/donald trump speech' + str(i) + '.jpg'
-#         print(img_path2)
-#         img2 = cv.imread(img_path2,cv.IMREAD_GRAYSCALE) # trainImage
-#         l=0
-#         if(methodNum==1):
-#             l = m1(img1,img2,False)
-#         elif(methodNum==2):
-#             l = m2(img1,img2,False)
-#         elif(methodNum==3):
-#             l = m3(img1,img2,False)
-#         goodArray1.append(l)
-#         goodArrayName1.append(img_path2)
+def method(img_path1, dir1,dir2,methodNum):
+    goodArray1 = []
+    goodArrayName1 = []
+    goodArray2 = []
+    goodArrayName2 = []
+    img1 = cv.imread(img_path1,cv.IMREAD_GRAYSCALE) # queryImage
+    for i in range(101,151):
+        img_path2 = dir1 + '/donald trump speech' + str(i) + '.jpg'
+        print(img_path2)
+        img2 = cv.imread(img_path2,cv.IMREAD_GRAYSCALE) # trainImage
+        l=0
+        if(methodNum==1):
+            l = m1(img1,img2,False)
+        elif(methodNum==2):
+            l = m2(img1,img2,False)
+        elif(methodNum==3):
+            l = m3(img1,img2,False)
+        goodArray1.append(l)
+        goodArrayName1.append(img_path2)
 
-#     for i in range(1,51):
-#         img_path2 = dir1 + '/trump' + str(i) + '.jpg'
-#         print(img_path2)
-#         img2 = cv.imread(img_path2,cv.IMREAD_GRAYSCALE) # trainImage
-#         l=0
-#         if(methodNum==1):
-#             l = m1(img1,img2,False)
-#         elif(methodNum==2):
-#             l = m2(img1,img2,False)
-#         elif(methodNum==3):
-#             l = m3(img1,img2,False)
-#         goodArray1.append(l)
-#         goodArrayName1.append(img_path2)
+    for i in range(1,51):
+        img_path2 = dir1 + '/trump' + str(i) + '.jpg'
+        print(img_path2)
+        img2 = cv.imread(img_path2,cv.IMREAD_GRAYSCALE) # trainImage
+        l=0
+        if(methodNum==1):
+            l = m1(img1,img2,False)
+        elif(methodNum==2):
+            l = m2(img1,img2,False)
+        elif(methodNum==3):
+            l = m3(img1,img2,False)
+        goodArray1.append(l)
+        goodArrayName1.append(img_path2)
 
-#     for i in range(51,101):
-#         img_path2 = dir1 + '/donald trump' + str(i) + '.jpg'
-#         print(img_path2)
-#         img2 = cv.imread(img_path2,cv.IMREAD_GRAYSCALE) # trainImage
-#         l=0
-#         if(methodNum==1):
-#             l = m1(img1,img2,False)
-#         elif(methodNum==2):
-#             l = m2(img1,img2,False)
-#         elif(methodNum==3):
-#             l = m3(img1,img2,False)
-#         goodArray1.append(l)
-#         goodArrayName1.append(img_path2)
+    for i in range(51,101):
+        img_path2 = dir1 + '/donald trump' + str(i) + '.jpg'
+        print(img_path2)
+        img2 = cv.imread(img_path2,cv.IMREAD_GRAYSCALE) # trainImage
+        l=0
+        if(methodNum==1):
+            l = m1(img1,img2,False)
+        elif(methodNum==2):
+            l = m2(img1,img2,False)
+        elif(methodNum==3):
+            l = m3(img1,img2,False)
+        goodArray1.append(l)
+        goodArrayName1.append(img_path2)
 
-#     for i in range(150):
-#         img_path2 = dir2 + '/musk' + str(i) + '.jpg'
-#         print(img_path2)
-#         img2 = cv.imread(img_path2,cv.IMREAD_GRAYSCALE) # trainImage
-#         l=0
-#         if(methodNum==1):
-#             l = m1(img1,img2,False)
-#         elif(methodNum==2):
-#             l = m2(img1,img2,False)
-#         elif(methodNum==3):
-#             l = m3(img1,img2,False)
-#         goodArray2.append(l)
-#         goodArrayName2.append(img_path2)
-#     print("The original images of this deepfake are: ")
-#     index1 = goodArray1.index(max(goodArray1))
-#     index2 = goodArray2.index(max(goodArray2))
-#     features1 = max(goodArray1)
-#     features2 = max(goodArray2)
-#     print(goodArrayName1[index1])
-#     print(goodArrayName2[index2])
+    for i in range(150):
+        img_path2 = dir2 + '/musk' + str(i) + '.jpg'
+        print(img_path2)
+        img2 = cv.imread(img_path2,cv.IMREAD_GRAYSCALE) # trainImage
+        l=0
+        if(methodNum==1):
+            l = m1(img1,img2,False)
+        elif(methodNum==2):
+            l = m2(img1,img2,False)
+        elif(methodNum==3):
+            l = m3(img1,img2,False)
+        goodArray2.append(l)
+        goodArrayName2.append(img_path2)
+    print("The original images of this deepfake are: ")
+    index1 = goodArray1.index(max(goodArray1))
+    index2 = goodArray2.index(max(goodArray2))
+    features1 = max(goodArray1)
+    features2 = max(goodArray2)
+    print(goodArrayName1[index1])
+    print(goodArrayName2[index2])
 
-#     print("1. " + goodArrayName1[index1] + " with number of feautres matching: " + str(features1))
-#     print("2. " + goodArrayName2[index2] + " with number of feautres matching: " + str(features2))
-#     # if(methodNum==1):
-#     #     m1(img1,cv.imread(goodArrayName1[index1],cv.IMREAD_GRAYSCALE), True)
-#     #     m1(img1,cv.imread(goodArrayName2[index2],cv.IMREAD_GRAYSCALE), True)
-#     # elif(methodNum==2):
-#     #     m2(img1,cv.imread(goodArrayName1[index1],cv.IMREAD_GRAYSCALE), True)
-#     #     m2(img1,cv.imread(goodArrayName2[index2],cv.IMREAD_GRAYSCALE), True)
-#     # elif(methodNum==3):
-#     #     m3(img1,cv.imread(goodArrayName1[index1],cv.IMREAD_GRAYSCALE), True)
-#     #     m3(img1,cv.imread(goodArrayName2[index2],cv.IMREAD_GRAYSCALE), True)
+    print("1. " + goodArrayName1[index1] + " with number of feautres matching: " + str(features1))
+    print("2. " + goodArrayName2[index2] + " with number of feautres matching: " + str(features2))
+    if(methodNum==1):
+        m1(img1,cv.imread(goodArrayName1[index1],cv.IMREAD_GRAYSCALE), True)
+        m1(img1,cv.imread(goodArrayName2[index2],cv.IMREAD_GRAYSCALE), True)
+    elif(methodNum==2):
+        m2(img1,cv.imread(goodArrayName1[index1],cv.IMREAD_GRAYSCALE), True)
+        m2(img1,cv.imread(goodArrayName2[index2],cv.IMREAD_GRAYSCALE), True)
+    elif(methodNum==3):
+        m3(img1,cv.imread(goodArrayName1[index1],cv.IMREAD_GRAYSCALE), True)
+        m3(img1,cv.imread(goodArrayName2[index2],cv.IMREAD_GRAYSCALE), True)
 
 
 def seedOut(methodNum):
@@ -208,12 +208,12 @@ def seedOut(methodNum):
 
 
 def main():
-    # img_path1 = sys.argv[2]
-    # dir1 = sys.argv[3]
-    # dir2 = sys.argv[4]
+    img_path1 = sys.argv[2]
+    dir1 = sys.argv[3]
+    dir2 = sys.argv[4]
     methodNum = int(sys.argv[1])
-    seedOut(methodNum)
-    # method(img_path1,dir1,dir2,methodNum)
+    # seedOut(methodNum)
+    method(img_path1,dir1,dir2,methodNum)
 
 if __name__ == "__main__":
     start = time.time()
